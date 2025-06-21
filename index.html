@@ -1,215 +1,197 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Craftify Sites Portfolio</title>
-  <meta name="description" content="Professional product websites built fast. Mobile-friendly and modern design.">
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/1055/1055687.png" type="image/png">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f6f8;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f9fc;
       color: #333;
-      overflow-x: hidden;
-      scroll-behavior: smooth;
     }
+
     header {
-      background: linear-gradient(135deg, #1abc9c, #16a085);
-      padding: 60px 20px;
-      text-align: center;
+      background: linear-gradient(to right, #667eea, #764ba2);
       color: white;
-    }
-    header h1 {
-      font-size: 3rem;
-      opacity: 0;
-      animation: fadeInDown 1s ease forwards;
-    }
-    .subheading {
-      margin-top: 10px;
-      font-size: 1.2rem;
-      opacity: 0;
-      animation: fadeInUp 1s ease 0.5s forwards;
-    }
-    .cta-button {
-      margin-top: 20px;
-      background: #f39c12;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 10px;
-      font-size: 1rem;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-    }
-    nav {
-      background-color: #fff;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-      display: flex;
-      justify-content: center;
-      padding: 15px;
-    }
-    nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #16a085;
-      font-weight: 600;
-    }
-    nav a:hover { text-decoration: underline; }
-    .container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
       padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .product {
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .product:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
-    }
-    .product img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
-    .product-content {
-      padding: 20px;
-    }
-    .product-title {
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-bottom: 10px;
-    }
-    .product-description {
-      font-size: 0.95rem;
-      color: #555;
-      margin-bottom: 20px;
-    }
-    .contact-button {
-      background: #25d366;
-      color: white;
-      border: none;
-      padding: 10px 16px;
-      border-radius: 10px;
-      font-size: 0.95rem;
-      text-decoration: none;
-      display: inline-block;
       text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     }
-    .features-section, .testimonial-section {
-      background-color: #fff;
-      padding: 60px 20px;
-      text-align: center;
+
+    header h1 {
+      margin: 0;
+      font-size: 3em;
     }
-    .features-section h2, .testimonial-section h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+
+    header p {
+      font-size: 1.2em;
     }
-    .features {
+
+    nav {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 30px;
-      margin-top: 30px;
+      gap: 1em;
+      background-color: #eee;
+      padding: 1em 0;
     }
-    .feature {
-      background: #f1f3f5;
-      padding: 20px;
-      border-radius: 12px;
-      width: 250px;
-      transition: transform 0.3s ease;
+
+    nav a {
+      text-decoration: none;
+      color: #333;
+      background-color: #ddd;
+      padding: 0.5em 1em;
+      border-radius: 8px;
+      transition: background-color 0.3s, transform 0.3s;
     }
-    .feature:hover {
+
+    nav a:hover {
+      background-color: #bbb;
       transform: scale(1.05);
     }
-    .feature h3 {
-      font-size: 1.1rem;
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      color: #444;
+      margin-bottom: 20px;
+      border-bottom: 2px solid #ccc;
+      display: inline-block;
+      padding-bottom: 5px;
+      text-align: center;
+      display: block;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .product, .service {
+      background-color: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .product:hover, .service:hover {
+      transform: translateY(-5px);
+    }
+
+    .product img, .service img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product-title, .service-title {
+      font-weight: bold;
+      margin: 15px 0 10px;
+    }
+
+    .product-description, .service-description {
+      font-size: 0.95em;
       margin-bottom: 10px;
     }
-    .feature p {
-      font-size: 0.9rem;
-      color: #444;
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 15px;
+      background-color: #667eea;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background-color 0.3s;
     }
-    .testimonial {
-      font-style: italic;
-      color: #555;
-      margin: 20px auto;
-      max-width: 600px;
+
+    .contact-button:hover {
+      background-color: #5a67d8;
     }
+
     footer {
-      background: #111;
+      background-color: #222;
       color: #ccc;
       text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-    }
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-      .product img {
-        height: 180px;
-      }
+      padding: 20px;
+      font-size: 0.9em;
     }
   </style>
 </head>
+
 <body>
   <header>
-    <h1>Craftify Sites Portfolio</h1>
-    <p class="subheading">Get a selling website for your product in 1 day – fast and mobile-ready!</p>
-    <a class="cta-button" href="https://wa.me/919103462941?text=I'm%20interested%20in%20getting%20a%20website%20like%20this!">Hire Me on WhatsApp</a>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Showcasing my work and services with style and performance.</p>
   </header>
 
   <nav>
     <a href="#products">Products</a>
-    <a href="#features">Why Choose Me</a>
-    <a href="#contact">Contact</a>
+    <a href="#about">About Me</a>
+    <a href="#services">Services</a>
   </nav>
 
-  <div class="features-section" id="features">
-    <h2>Why Choose Me?</h2>
-    <div class="features">
-      <div class="feature"><h3>Attractive UI</h3><p>Modern layouts that impress buyers instantly.</p></div>
-      <div class="feature"><h3>Mobile Friendly</h3><p>Fully responsive websites that work on all devices.</p></div>
-      <div class="feature"><h3>Quick Edits</h3><p>Fast customizations to match your exact need.</p></div>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate web developer who loves creating clean, fast, and user-friendly websites. I focus on delivering the best possible results to my clients with dedication and creative design. Whether you're starting a new business or want to revamp your site — I'm here to help!</p>
+  </section>
+
+  <section id="products">
+    <h2>My Products</h2>
+    <div class="product-grid">
+      <div class="product">
+        <img src="prayermat.jpg" alt="Prayer Mat">
+        <div class="product-title">Luxury Prayer Mat</div>
+        <div class="product-description">Elegant and peaceful — ideal for daily prayer and gifts.</div>
+        <a href="https://wa.me/919103462941?text=I'm%20interested%20in%20the%20Prayer%20Mat" class="contact-button">Contact on WhatsApp</a>
+      </div>
+      <div class="product">
+        <img src="smartwatch.jpg" alt="Smartwatch Pro">
+        <div class="product-title">Smartwatch Pro</div>
+        <div class="product-description">Track fitness and calls — stylish & powerful device.</div>
+        <a href="https://wa.me/919103462941?text=I'm%20interested%20in%20the%20Smartwatch" class="contact-button">Contact on WhatsApp</a>
+      </div>
+      <div class="product">
+        <img src="backpack.jpg" alt="Travel Backpack">
+        <div class="product-title">Travel Backpack</div>
+        <div class="product-description">Strong and compact — built for adventures and travel.</div>
+        <a href="https://wa.me/919103462941?text=I'm%20interested%20in%20the%20Backpack" class="contact-button">Contact on WhatsApp</a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="container" id="products">
-    <div class="product"><img src="prayermat.jpg"><div class="product-content"><div class="product-title">Luxury Prayer Mat</div><div class="product-description">Elegant and peaceful — ideal for daily prayer and gifts.</div><a href="https://wa.me/919103462941?text=I'm%20interested%20in%20the%20Prayer%20Mat" class="contact-button">Contact on WhatsApp</a></div></div>
-    <div class="product"><img src="smartwatch.jpg"><div class="product-content"><div class="product-title">Smartwatch Pro</div><div class="product-description">Track fitness and calls — stylish & powerful device.</div><a href="https://wa.me/919103462941?text=I'm%20interested%20in%20the%20Smartwatch" class="contact-button">Contact on WhatsApp</a></div></div>
-    <div class="product"><img src="backpack.jpg"><div class="product-content"><div class="product-title">Travel Backpack</div><div class="product-description">Strong and compact — built for adventures and travel.</div><a href="https://wa.me/919103462941?text=I'm%20interested%20in%20the%20Backpack" class="contact-button">Contact on WhatsApp</a></div></div>
-  </div>
+  <section id="services">
+    <h2>Services I Offer</h2>
+    <div class="product-grid">
+      <div class="service">
+        <img src="webdesign.jpg" alt="Web Design">
+        <div class="service-title">Web Design</div>
+        <div class="service-description">Modern and responsive designs tailored for your brand.</div>
+      </div>
+      <div class="service">
+        <img src="delivery.jpg" alt="Fast Delivery">
+        <div class="service-title">Fast Delivery</div>
+        <div class="service-description">Quick turnaround to meet your project deadlines.</div>
+      </div>
+      <div class="service">
+        <img src="support.jpg" alt="24/7 Support">
+        <div class="service-title">24/7 Support</div>
+        <div class="service-description">Always available for maintenance and troubleshooting.</div>
+      </div>
+    </div>
+  </section>
 
-  <div class="testimonial-section">
-    <h2>Client Testimonial</h2>
-    <p class="testimonial">⭐⭐⭐⭐⭐<br>“Amazing service! The website was ready in a day and I got customers quickly.”<br>— A Happy Client</p>
-  </div>
-
-  <footer id="contact">
-    Contact: yathin00000007@gmail.com | Phone: 9103462941
+  <footer>
+    &copy; 2025 My Portfolio. All rights reserved.
   </footer>
 </body>
+
 </html>
